@@ -1,19 +1,18 @@
 <template>
-  <div>
-    <van-button type="primary">主要按钮</van-button>
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import axios from '@/utils/request'
+// import axios from '@/utils/request'
 
 export default {
-  created() {
-    console.log(axios.defaults)
-  }
+  // created() {
+  //   console.log(axios.defaults)
+  // }
 }
 </script>
 
 <style>
-
 </style>
