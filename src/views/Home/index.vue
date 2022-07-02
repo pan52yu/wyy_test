@@ -12,23 +12,22 @@
     </van-grid>
     <!-- 最新音乐 -->
     <van-cell title="最新音乐" class="vt-cell" />
-    <van-cell
+
+    <SongItem
       v-for="item in newSongs"
       :key="item.id"
       :title="item.name"
       :label="item.song.artists[0].name + '---' + item.name"
-      center
-      class="new-son"
-    >
-      <van-icon name="play-circle-o" />
-    </van-cell>
+    ></SongItem>
   </div>
 </template>
 
 <script>
 import { getRecommendedSong, getNewSongs } from '@/api'
+import SongItem from '@/components/SongItem.vue'
 export default {
   name: 'Home',
+  components: { SongItem },
   data() {
     return {
       recommendedSongList: [],
@@ -72,11 +71,5 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-}
-.new-son {
-  border-bottom: 1px solid #ccc;
-  .van-cell__title {
-    flex: 4;
-  }
 }
 </style>
