@@ -16,6 +16,7 @@
     <SongItem
       v-for="item in newSongs"
       :key="item.id"
+      :id="item.id"
       :title="item.name"
       :label="item.song.artists[0].name + '---' + item.name"
     ></SongItem>

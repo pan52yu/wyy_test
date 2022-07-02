@@ -1,5 +1,11 @@
 <template>
-  <van-cell :title="title" :label="label" center class="new-son">
+  <van-cell
+    :title="title"
+    :label="label"
+    center
+    class="new-son"
+    @click="goPaly"
+  >
     <van-icon name="play-circle-o" />
   </van-cell>
 </template>
@@ -14,6 +20,18 @@ export default {
     label: {
       type: String,
       required: true
+    },
+    id: {
+      type: [Number, String],
+      required: true
+    }
+  },
+  methods: {
+    goPaly() {
+      this.$router.push({
+        path: '/play',
+        query: { id: this.id }
+      })
     }
   }
 }

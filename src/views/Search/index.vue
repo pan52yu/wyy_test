@@ -31,6 +31,7 @@
         <SongItem
           v-for="item in searchList"
           :key="item.id"
+          :id="item.id"
           :title="item.name"
           :label="item.ar[0].name + '---' + item.name"
         ></SongItem>
@@ -72,7 +73,7 @@ export default {
       this.hotLists = data.result.hots
     },
     getSearch() {
-      // 防抖处理
+      // 防抖
       if (this.timer !== 0) clearTimeout(this.timer)
       this.page = 1
       this.timer = setTimeout(async () => {
