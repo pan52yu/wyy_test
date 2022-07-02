@@ -7,7 +7,8 @@ import {
   Tabbar,
   TabbarItem,
   Icon,
-  Search
+  Search,
+  List
 } from 'vant'
 const elements = [
   Button,
@@ -18,7 +19,8 @@ const elements = [
   Grid,
   GridItem,
   Icon,
-  Search
+  Search,
+  List
 ]
 export default function (Vue) {
   elements.forEach((el) => Vue.use(el))
